@@ -1,0 +1,160 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Aula 02 </title>
+
+  <!--Adiciona CSS ao HTML-->
+  <style>
+  </style>
+</head>
+
+<body>
+  <script>
+  //Adiciona JavaScript ao HTML
+  var nome = "Jéssica Karolina Galindo dos Santos";
+  var idade = 23;
+  var sexoFeminino = true;
+  var peso = 56.8;
+
+  alert("Olá, seu nome é " + nome + ", você tem " + idade + " anos e seu peso é " + peso + " quilos!!");
+
+  if(sexoFeminino){
+    alert("Mulher");
+  }else{
+    alert("Homem");
+  }
+
+  if(idade <= 18){
+    alert("Novinho!!");
+  }else if(idade <= 30){
+    alert("Tiozinho!!");
+  }else{
+    alert("Tiozão(ona)");
+  }
+
+  var dia = new Date().getDay();
+
+  switch (dia) {
+    case 0:
+    alert("Domingo");
+    break;
+
+    case 1:
+    alert("Segunda");
+    break;
+
+    case 2:
+    alert("Terça");
+    break;
+
+    case 3:
+    alert("Quarta");
+    break;
+
+    case 4:
+    alert("Quinta");
+    break;
+
+    case 5:
+    alert("Sexta");
+    break;
+
+    case 6:
+    alert("Sabado");
+    break;
+  }
+
+  var num = parseInt(prompt("Digite um número de 1 a 10:"));
+  //alert(num + " em Romano: " + romanosSimples(num)); //numerosRomanos(num);
+
+  /*for(i = 10; i >= 1; i--){
+  num = numerosRomanos(i);
+  alert(i + " em Romano: " + num);
+} */
+
+/*var i = 1;
+while(i <= 10){
+num = numerosRomanos(i);
+alert(i + " em Romano: " +num);
+i++;
+} */
+
+function romanosSimples(num){
+  var romanos = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+  return romanos[num-1];
+}
+
+function numerosRomanos(num){
+  var romano;
+  switch(num)
+  {
+    case 1:
+    return "I";
+
+    case 2:
+    return "II";
+
+    case 3:
+    return "III";
+
+    case 4:
+    return "IV";
+
+    case 5:
+    return "V";
+
+    case 6:
+    return "VI";
+
+    case 7:
+    return "VII";
+
+    case 8:
+    return "VIII";
+
+    case 9:
+    return "IX";
+
+    case 10:
+    return "X";
+
+    default:
+    alert("Numero inválido!!");
+  }
+}
+
+/*  var dadosPessoais = ["Jéssica", ["19041-100", "Rua A", 200, "complemento", "Bairro", "Cidade", "Estado"], "99113-6880"];
+dadosPessoais[0] = "Jéssica Galindo";
+dadosPessoais.splice(2, 1); */
+
+var dadosPessoais = {
+  nome: "Jéssica",
+  sobrenome: "Galindo",
+
+  endereco: {
+    cep: "19999-100",
+    logradouro: "Rua das ruas",
+    numero: 200,
+    complemento: "complemento",
+    bairro: "Bairro",
+    cidade: "Presidente Prudente",
+    estado: "São Paulo",
+
+    showInfoEndereco: function(){
+      alert("Endereço: " + this.logradouro + ", " + this.numero);
+    },
+    concatInfoEndereco: function() {
+      return "Endereço: " + this.logradouro + ", " + this.numero;
+    }
+  },
+
+  showInfoDadosPessoais: function(){
+    alert("Nome: " + this.nome + " " + this.endereco.concatInfoEndereco());
+  }
+};
+
+dadosPessoais.showInfoDadosPessoais();
+
+</script>
+</body>
+</html>
